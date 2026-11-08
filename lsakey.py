@@ -55,7 +55,7 @@ unk1 = groupByByte[8:12] #unknown property
 unk2 = groupByByte[12:16] #unknown property
 
 secretSize = bytes.fromhex("".join(secretSize))
-secretSize = int.from_bytes(secretSize, byteorder="little") # Size of the keys blob in little endian decimal representation. byteorder="little" interprets it as little endian. For example if your clearSecretSize is 54000000 and you don't use byteorder="little", it will return decimal 1409286144 instead of 84  
+secretSize = int.from_bytes(secretSize, byteorder="little") # Size of SYSTEM_KEYS in little endian decimal representation. byteorder="little" interprets it as little endian. For example if your secretSize is 54000000 and you don't use byteorder="little", it will return decimal 1409286144 instead of 84  
 
 #The range of SYSTEM_KEYS 
 keys = groupByByte[16:16 + secretSize] #all bytes that aren't within this range won't be used and can be discarded
