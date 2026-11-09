@@ -46,8 +46,6 @@ secretLength = int.from_bytes(secretLength, byteorder="little")
 reserved = groupByByte[4:16]
 
 secretData = groupByByte[16:16 + secretLength]
-nlkm = "".join(secretData)
+nlkmKey = "".join(secretData)
 
-print(f"\nNL$KM: {nlkm}")
-
-#you can compare to a dump from secretsdump
+print(f"\nNL$KM Key: {nlkmKey}")
