@@ -79,3 +79,6 @@ domainName = domainNameBinary.decode("utf-16-le")
 print(domainName)
 print(domainNameLength)
 print(f"Hashcat ready format: {domainName}/{username}:$DCC2$10240#{username}#{dcc2Hash}")
+
+
+#The script works as intended, i just cracked my password: hashcat -m 2100 --username <path/to/hash> <path/to/wordlist>
